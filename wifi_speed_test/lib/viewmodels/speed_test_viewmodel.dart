@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import '../models/test_result.dart';
 import '../services/speed_test_service.dart';
-import '../services/storage_service.dart';
+import '../repositories/speed_test_repository.dart';
 
 enum TestState { idle, testingDownload, testingUpload, complete, error }
 
 class SpeedTestViewModel extends ChangeNotifier {
   final SpeedTestService _speedTestService = SpeedTestService();
-  final StorageService _storageService = StorageService();
+  final SpeedTestRepository _repository = SpeedTestRepository();
 
   TestState _currentState = TestState.idle;
   TestState get currentState => _currentState;
@@ -120,16 +120,17 @@ class SpeedTestViewModel extends ChangeNotifier {
   }
 
   Future<void> _saveResult() async {
-    // Generate an ID for the result
-    final uuid = "test_${DateTime.now().millisecondsSinceEpoch}";
-    
     final result = TestResult(
-      id: uuid,
+      id: "test_${DateTime.now().millisecondsSinceEpoch}",
       timestamp: DateTime.now(),
-      ping: _ping > 0 ? _ping : 25.0, // Mock ping if not provided by library
+      ping: _ping > 0 ? _ping : 25.0,
       downloadSpeed: _downloadSpeed,
       uploadSpeed: _uploadSpeed,
     );
-    await _storageService.saveTestResult(result);
+    try {
+      await _repository.saveResult(result);
+    } catch (e) {
+      debugPrint('Error saving result: $e');
+    }
   }
 }

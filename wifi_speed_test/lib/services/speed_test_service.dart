@@ -54,11 +54,29 @@ class SpeedTestService {
 
     try {
       // --- Ping ---
-      final pingStart = DateTime.now();
-      await http.get(Uri.parse('https://www.google.com'));
-      final pingMs = DateTime.now().difference(pingStart).inMilliseconds.toDouble();
-      if (_cancelled) { onCancel(); return; }
-      onPingResult(pingMs);
+      // We measure TCP connection latency to a reliable CDN (Cloudflare) 
+      // instead of a full HTTP GET to avoid SSL/DNS/HTTP overhead.
+      try {
+        double bestPing = 999.0;
+        // Perform 3 samples and take the minimum for better accuracy
+        for (int i = 0; i < 3; i++) {
+          if (_cancelled) break;
+          final stopwatch = Stopwatch()..start();
+          try {
+            final socket = await Socket.connect('1.1.1.1', 80, timeout: const Duration(seconds: 2));
+            stopwatch.stop();
+            await socket.close();
+            final currentPing = stopwatch.elapsedMilliseconds.toDouble();
+            if (currentPing < bestPing) bestPing = currentPing;
+          } catch (_) {}
+          await Future.delayed(const Duration(milliseconds: 100));
+        }
+
+        if (_cancelled) { onCancel(); return; }
+        onPingResult(bestPing == 999.0 ? 0.0 : bestPing);
+      } catch (_) {
+        onPingResult(0.0);
+      }
 
       // --- Download ---
       // Use a 10MB file from speedtest.tele2.net

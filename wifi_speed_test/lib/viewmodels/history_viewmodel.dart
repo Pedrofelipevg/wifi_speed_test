@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../models/test_result.dart';
-import '../services/storage_service.dart';
+import '../repositories/speed_test_repository.dart';
 
 class HistoryViewModel extends ChangeNotifier {
-  final StorageService _storageService = StorageService();
+  final SpeedTestRepository _repository = SpeedTestRepository();
 
   List<TestResult> _history = [];
   List<TestResult> get history => _history;
@@ -15,15 +15,13 @@ class HistoryViewModel extends ChangeNotifier {
     _isLoading = true;
     notifyListeners();
 
-    _history = await _storageService.getHistory();
+    try {
+      _history = await _repository.getHistory();
+    } catch (e) {
+      debugPrint('Error loading history: $e');
+    }
     
     _isLoading = false;
-    notifyListeners();
-  }
-
-  Future<void> clearHistory() async {
-    await _storageService.clearHistory();
-    _history = [];
     notifyListeners();
   }
 }
