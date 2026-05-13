@@ -1,0 +1,10 @@
+﻿Analyzing wifi_speed_test...                                    
+
+   info - Parameter 'key' could be a super parameter - lib\main.dart:20:9 - use_super_parameters
+warning - Unused import: 'package:uuid/uuid.dart' - lib\viewmodels\speed_test_viewmodel.dart:6:8 - unused_import
+  error - The argument type 'ConnectivityResult' can't be assigned to the parameter type 'List<ConnectivityResult>'.  - lib\viewmodels\speed_test_viewmodel.dart:41:29 - argument_type_not_assignable
+  error - The argument type 'void Function(List<ConnectivityResult>)' can't be assigned to the parameter type 'void Function(ConnectivityResult)?'.  - lib\viewmodels\speed_test_viewmodel.dart:43:49 - argument_type_not_assignable
+   info - Parameter 'key' could be a super parameter - lib\views\history_screen.dart:7:9 - use_super_parameters
+   info - Don't use 'BuildContext's across async gaps - lib\views\history_screen.dart:17:28 - use_build_context_synchronously
+   info - Parameter 'key' could be a super parameter - lib\views\home_screen.dart:8:9 - use_super_parameters
+

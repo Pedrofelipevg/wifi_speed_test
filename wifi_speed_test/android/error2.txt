@@ -1,0 +1,20 @@
+﻿
+> Task :gradle:checkKot
+linGradlePluginConfigur
+ationErrors
+This will become an 
+error in Gradle 8.0.
+FAILURE: Build failed 
+with an exception.
+* What went wrong:
+> A failure occurred 
+while executing org.jet
+brains.kotlin.compilerR
+unner.GradleCompilerRun
+nerWithWorkers$GradleKo
+tlinCompilerWorkAction
+   > Compilation 
+error. See log for 
+more details
+
+

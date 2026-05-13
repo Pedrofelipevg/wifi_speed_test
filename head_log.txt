@@ -1,0 +1,60 @@
+﻿> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle:compileKotlin UP-TO-DATE
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+.\gradlew : 
+No linha:1 caractere:13
++ cd android; .\gradlew 
+assembleDebug --stacktrace 
+2>&1 | Out-File -Enc ...
++             ~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~
+    + CategoryInfo         
+     : NotSpecified: (:St  
+  ring) [], RemoteExcept   
+ ion
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+FAILURE: Build failed with 
+an exception.
+
+* Where:
+Build file 'C:\Users\procin
+t\Desktop\AntigravityProjec
+ts\wifi_speed_test\android\
+app\build.gradle.kts' 
+line: 1
+
+* What went wrong:
+An exception occurred 
+applying plugin request 
+[id: 
+'com.android.application']
+> Failed to apply plugin 'c
+om.android.internal.version
+-check'.
+   > Minimum supported 
+Gradle version is 8.13. 
+Current version is 8.11.1.
+     Try updating the 
+'distributionUrl' property 
+in C:\Users\procint\Desktop
+\AntigravityProjects\wifi_s
+peed_test\android\gradle\wr
+apper\gradle-wrapper.proper
+ties to 
+'gradle-8.13-bin.zip'.
+
+* Try:
+> Run with --info or 
+--debug option to get more 
+log output.
+> Run with --scan to get 
+full insights.
+> Get more help at 

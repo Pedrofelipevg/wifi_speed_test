@@ -1,0 +1,80 @@
+﻿e.internal.plugins.VersionC
+heckPlugin.apply(VersionChe
+ckPlugin.kt:32)
+	at org.gradle.api.internal
+.plugins.ImperativeOnlyPlug
+inTarget.applyImperative(Im
+perativeOnlyPluginTarget.ja
+va:54)
+4 actionable tasks: 4 up-to-date
+	at org.gradle.api.internal
+.plugins.RuleBasedPluginTar
+get.applyImperative(RuleBas
+edPluginTarget.java:51)
+	at org.gradle.api.internal
+.plugins.ModelDefaultsApply
+ingPluginTarget.applyImpera
+tive(ModelDefaultsApplyingP
+luginTarget.java:46)
+	at org.gradle.api.internal
+.plugins.DefaultPluginManag
+er.addPlugin(DefaultPluginM
+anager.java:190)
+	at org.gradle.api.internal
+.plugins.DefaultPluginManag
+er.access$100(DefaultPlugin
+Manager.java:54)
+	at org.gradle.api.internal
+.plugins.DefaultPluginManag
+er$AddPluginBuildOperation.
+run(DefaultPluginManager.ja
+va:288)
+	at org.gradle.internal.ope
+rations.DefaultBuildOperati
+onRunner$1.execute(DefaultB
+uildOperationRunner.java:29
+)
+	at org.gradle.internal.ope
+rations.DefaultBuildOperati
+onRunner$1.execute(DefaultB
+uildOperationRunner.java:26
+)
+	at org.gradle.internal.ope
+rations.DefaultBuildOperati
+onRunner$2.execute(DefaultB
+uildOperationRunner.java:66
+)
+	at org.gradle.internal.ope
+rations.DefaultBuildOperati
+onRunner$2.execute(DefaultB
+uildOperationRunner.java:59
+)
+	at org.gradle.internal.ope
+rations.DefaultBuildOperati
+onRunner.execute(DefaultBui
+ldOperationRunner.java:166)
+	at org.gradle.internal.ope
+rations.DefaultBuildOperati
+onRunner.execute(DefaultBui
+ldOperationRunner.java:59)
+	at org.gradle.internal.ope
+rations.DefaultBuildOperati
+onRunner.run(DefaultBuildOp
+erationRunner.java:47)
+	at org.gradle.api.internal
+.plugins.DefaultPluginManag
+er.lambda$doApply$0(Default
+PluginManager.java:170)
+	at org.gradle.internal.cod
+e.DefaultUserCodeApplicatio
+nContext.apply(DefaultUserC
+odeApplicationContext.java:
+44)
+	at org.gradle.api.internal
+.plugins.DefaultPluginManag
+er.doApply(DefaultPluginMan
+ager.java:169)
+	... 279 more
+
+
+BUILD FAILED in 881ms

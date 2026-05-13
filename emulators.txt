@@ -1,0 +1,13 @@
+﻿2 available emulators:
+
+Id                                        ÔÇó Name                                      ÔÇó Manufacturer ÔÇó Platform
+
+Pixel_3a_API_35_extension_level_13_x86_64 ÔÇó Pixel_3a_API_35_extension_level_13_x86_64 ÔÇó Google       ÔÇó android
+Pixel_4_API_36                            ÔÇó Pixel 4 API 36                            ÔÇó Google       ÔÇó android
+
+To run an emulator, run 'flutter emulators --launch <emulator id>'.
+To create a new emulator, run 'flutter emulators --create [--name xyz]'.
+
+You can find more information on managing emulators at the links below:
+  https://developer.android.com/studio/run/managing-avds
+  https://developer.android.com/studio/command-line/avdmanager
